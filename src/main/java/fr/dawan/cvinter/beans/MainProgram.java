@@ -7,7 +7,7 @@ import fr.dawan.cvinter.dao.UtilisateurDao;
 public class MainProgram {
 
 	public static void main(String[] args) {
-		Utilisateur candidat = new Utilisateur("Geoffrey", "Vanacker", "gv@cool.fr", "ohoh");
+		User candidat = new User("Geoffrey", "Vanacker", "gv@cool.fr", "ohoh");
 
 		try {
 			int x = UtilisateurDao.create(candidat);

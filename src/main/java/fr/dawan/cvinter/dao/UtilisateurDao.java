@@ -5,11 +5,13 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import fr.dawan.cvinter.beans.Utilisateur;
+import fr.dawan.cvinter.beans.User;
 
 public class UtilisateurDao {
+	
+	
 
-	public static int create(Utilisateur candidat) throws ClassNotFoundException, SQLException {
+	public static int create(User candidat) throws ClassNotFoundException, SQLException {
 		Class.forName("com.mysql.jdbc.Driver");
 		Connection cnx = DriverManager.getConnection("jdbc:mysql://localhost/cv", "root", "");
 		PreparedStatement preparedStatement = cnx.prepareStatement(
@@ -23,5 +25,10 @@ public class UtilisateurDao {
 
 		cnx.close();
 		return nb;
+	}
+	
+	
+	
+	public static void delete(User candidat)   {
 	}
 }
