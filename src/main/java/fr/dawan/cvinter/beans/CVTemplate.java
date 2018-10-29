@@ -13,13 +13,10 @@ public class CVTemplate {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
-	
+
 	@Version
 	private int version;
-	
-	@OneToOne
-	CV cv;
-	
+
 	private String name;
 
 	public long getId() {
@@ -38,14 +35,6 @@ public class CVTemplate {
 		this.version = version;
 	}
 
-	public CV getCv() {
-		return cv;
-	}
-
-	public void setCv(CV cv) {
-		this.cv = cv;
-	}
-
 	public String getName() {
 		return name;
 	}
@@ -54,7 +43,4 @@ public class CVTemplate {
 		this.name = name;
 	}
 
-	
-	
-	
 }

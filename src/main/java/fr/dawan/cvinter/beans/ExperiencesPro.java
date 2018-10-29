@@ -22,6 +22,8 @@ public class ExperiencesPro implements Serializable {
 
 	private String name;
 
+	private String entreprise;
+
 	@Temporal(TemporalType.DATE)
 	private Date startDate;
 
@@ -45,9 +47,10 @@ public class ExperiencesPro implements Serializable {
 		super();
 	}
 
-	public ExperiencesPro(String name, Date startDate, Date endDate, String description) {
+	public ExperiencesPro(String name, String entreprise, Date startDate, Date endDate, String description) {
 		super();
 		this.name = name;
+		this.entreprise = entreprise;
 		this.startDate = startDate;
 		this.endDate = endDate;
 		this.description = description;
