@@ -26,7 +26,7 @@ public class CVWS {
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<CV> findAll() throws Exception {
 		EntityManager em = StartupListener.emf.createEntityManager();
-		return GenericDao.findAll(CV.class, em, true);
+		return CVDao.findAll(em, true);
 	}
 
 	@GET

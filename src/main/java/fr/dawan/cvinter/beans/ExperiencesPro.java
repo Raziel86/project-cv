@@ -32,16 +32,16 @@ public class ExperiencesPro implements Serializable {
 
 	private String description;
 
-	@ManyToOne(cascade = CascadeType.ALL)
-	private CV cv;
-
-	public CV getCv() {
-		return cv;
-	}
-
-	public void setCv(CV cv) {
-		this.cv = cv;
-	}
+//	@ManyToOne(cascade = CascadeType.ALL)
+//	private CV cv;
+//
+//	public CV getCv() {
+//		return cv;
+//	}
+//
+//	public void setCv(CV cv) {
+//		this.cv = cv;
+//	}
 
 	public ExperiencesPro() {
 		super();
@@ -95,5 +95,15 @@ public class ExperiencesPro implements Serializable {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+
+	public String getEntreprise() {
+		return entreprise;
+	}
+
+	public void setEntreprise(String entreprise) {
+		this.entreprise = entreprise;
+	}
+	
+	
 
 }

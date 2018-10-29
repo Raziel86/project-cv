@@ -19,33 +19,23 @@ public class Competence implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 
-	
 	private String name;
-	
+
 	@ElementCollection
-	private  List<String> tag;
+	private List<String> tag;
 
-	@ManyToOne(cascade = CascadeType.ALL)
-	private CV cv;
+//	@ManyToOne(cascade = CascadeType.ALL)
+//	private CV cv;
 
-	
-	
-	
 	public Competence() {
 		tag = new ArrayList<>();
 	}
-	
-	
-	
 
 	public Competence(String name, List<String> tag) {
 		super();
 		this.name = name;
 		this.tag = tag;
 	}
-
-
-
 
 	public long getId() {
 		return id;
@@ -63,13 +53,13 @@ public class Competence implements Serializable {
 		this.name = name;
 	}
 
-	public CV getCv() {
-		return cv;
-	}
-
-	public void setCv(CV cv) {
-		this.cv = cv;
-	}
+//	public CV getCv() {
+//		return cv;
+//	}
+//
+//	public void setCv(CV cv) {
+//		this.cv = cv;
+//	}
 
 	public List<String> getTag() {
 		return tag;
@@ -78,8 +68,5 @@ public class Competence implements Serializable {
 	public void setTag(List<String> tag) {
 		this.tag = tag;
 	}
-
-	
-	
 
 }

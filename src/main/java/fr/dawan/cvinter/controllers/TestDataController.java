@@ -58,22 +58,22 @@ public class TestDataController extends HttpServlet {
 		cv1.setName("test1");
 		
 		Formation f1 = new Formation("Java Jee", new Date(), new Date(), "Lille", "blablabla");
-		f1.setCv(cv1);
+//		f1.setCv(cv1);
 		cv1.getFormations().add(f1);
 
 		ExperiencesPro exp1 = new ExperiencesPro("developpeur java", "GvMax", new Date(), new Date(), "blebleble");
-		exp1.setCv(cv1);
+//		exp1.setCv(cv1);
 		cv1.getXp().add(exp1);
 
 		List<String> tags = new ArrayList<>();
 		tags.add("Java 8");
 		tags.add("JS");
 		Competence comp1 = new Competence("Informatique", tags);
-		comp1.setCv(cv1);
+//		comp1.setCv(cv1);
 		cv1.getCompetences().add(comp1);
 
 		CentresInterets ci1 = new CentresInterets("escalade");
-		ci1.setCv(cv1);
+//		ci1.setCv(cv1);
 		cv1.getHobbies().add(ci1);
 
 		CVTemplate templ1 = new CVTemplate();

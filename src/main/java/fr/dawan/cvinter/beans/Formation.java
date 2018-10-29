@@ -36,16 +36,16 @@ public class Formation implements Serializable {
 
 	private String description;
 
-	@ManyToOne(cascade = CascadeType.ALL)
-	private CV cv;
-
-	public CV getCv() {
-		return cv;
-	}
-
-	public void setCv(CV cv) {
-		this.cv = cv;
-	}
+//	@ManyToOne(cascade = CascadeType.ALL)
+//	private CV cv;
+//
+//	public CV getCv() {
+//		return cv;
+//	}
+//
+//	public void setCv(CV cv) {
+//		this.cv = cv;
+//	}
 
 	public Formation() {
 		super();

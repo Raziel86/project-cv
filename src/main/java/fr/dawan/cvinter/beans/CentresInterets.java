@@ -21,11 +21,10 @@ public class CentresInterets implements Serializable {
 	@Version
 	private int version;
 
-
 	private String name;
 
-	@ManyToOne(cascade = CascadeType.ALL)
-	private CV cv;
+//	@ManyToOne(cascade = CascadeType.ALL)
+//	private CV cv;
 
 	public int getVersion() {
 		return version;
@@ -35,13 +34,13 @@ public class CentresInterets implements Serializable {
 		this.version = version;
 	}
 
-	public CV getCv() {
-		return cv;
-	}
-
-	public void setCv(CV cv) {
-		this.cv = cv;
-	}
+//	public CV getCv() {
+//		return cv;
+//	}
+//
+//	public void setCv(CV cv) {
+//		this.cv = cv;
+//	}
 
 	public CentresInterets() {
 		super();
