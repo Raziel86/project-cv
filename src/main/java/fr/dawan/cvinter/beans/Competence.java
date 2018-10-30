@@ -22,19 +22,19 @@ public class Competence implements Serializable {
 	private String name;
 
 	@ElementCollection
-	private List<String> tag;
+	private List<String> tags;
 
 //	@ManyToOne(cascade = CascadeType.ALL)
 //	private CV cv;
 
 	public Competence() {
-		tag = new ArrayList<>();
+		tags = new ArrayList<>();
 	}
 
-	public Competence(String name, List<String> tag) {
+	public Competence(String name, List<String> tags) {
 		super();
 		this.name = name;
-		this.tag = tag;
+		this.tags = tags;
 	}
 
 	public long getId() {
@@ -61,12 +61,12 @@ public class Competence implements Serializable {
 //		this.cv = cv;
 //	}
 
-	public List<String> getTag() {
-		return tag;
+	public List<String> getTags() {
+		return tags;
 	}
 
-	public void setTag(List<String> tag) {
-		this.tag = tag;
+	public void setTags(List<String> tags) {
+		this.tags = tags;
 	}
 
 }

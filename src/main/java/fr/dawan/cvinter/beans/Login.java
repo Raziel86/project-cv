@@ -10,10 +10,17 @@ public class Login implements Serializable {
 
 	@Id
 	private long id;
-	
-	private String email;
 
-	
+	private String email;
+	private String password;
+
+	public Login(String email, String password) {
+		super();
+		this.email = email;
+		this.password = password;
+
+	}
+
 	public long getId() {
 		return id;
 	}
@@ -21,8 +28,6 @@ public class Login implements Serializable {
 	public void setId(long id) {
 		this.id = id;
 	}
-
-	private String password;
 
 	public String getPassword() {
 		return password;

@@ -28,7 +28,7 @@ public class FormationWS {
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<Formation> findAll() throws Exception {
 		EntityManager em = StartupListener.emf.createEntityManager();
-		return FormationDao.findAll( em, true);
+		return GenericDao.findAll(Formation.class, em, true);
 	}
 
 	@GET

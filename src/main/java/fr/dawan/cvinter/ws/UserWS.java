@@ -14,18 +14,29 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import fr.dawan.cvinter.beans.CV;
 import fr.dawan.cvinter.beans.User;
 import fr.dawan.cvinter.controllers.StartupListener;
+import fr.dawan.cvinter.dao.CVDao;
 import fr.dawan.cvinter.dao.GenericDao;
+import fr.dawan.cvinter.dao.UtilisateurDao;
 
 @Path("/users") // localhost:8080/cvinter/api/users
 public class UserWS {
+	
+	@GET
+	@Path("/{id}/cv")
+	@Produces(MediaType.APPLICATION_JSON)
+	public List<CV> findCVByUserId(@PathParam("id") long id) throws Exception{
+		EntityManager em = StartupListener.emf.createEntityManager();
+		return CVDao.findCVByUserId(id, em, true);
+	}
 
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<User> findAll() throws Exception {
 		EntityManager em = StartupListener.emf.createEntityManager();
-		return GenericDao.findAll(User.class, em, true);
+		return GenericDao.findAll(User.class, em, false);
 	}
 
 	@GET
@@ -33,7 +44,7 @@ public class UserWS {
 	@Produces(MediaType.APPLICATION_JSON)
 	public User findById(@PathParam("id") long id) throws Exception {
 		EntityManager em = StartupListener.emf.createEntityManager();
-		return GenericDao.findById(User.class, id, em, true);
+		return GenericDao.findById(User.class, id, em, false);
 	}
 
 	@POST

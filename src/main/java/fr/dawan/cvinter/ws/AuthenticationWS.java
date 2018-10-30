@@ -21,11 +21,11 @@ public class AuthenticationWS {
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response login(User user) throws Exception {
-		System.out.println("User : " + user.getEmail() + " - " + user.getMdp());
+	public Response login(Login login) throws Exception {
+		System.out.println("User : " + login.getEmail() + " - " + login.getPassword());
 		EntityManager em = StartupListener.emf.createEntityManager();
 		
-		User u = AuthenticationDao.findUser(user, em, true);
+		User u = AuthenticationDao.findUser(login, em, true);
 		System.out.println(u);
 		if(u!=null && u.getId() > 0 ) {
 			

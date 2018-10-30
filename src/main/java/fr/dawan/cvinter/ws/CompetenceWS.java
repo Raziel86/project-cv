@@ -28,7 +28,7 @@ public class CompetenceWS {
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<Competence> findAll() throws Exception {
 		EntityManager em = StartupListener.emf.createEntityManager();
-		return CompetenceDao.findAll(em, true);
+		return GenericDao.findAll(Competence.class, em, false);
 	}
 
 	@GET
@@ -36,7 +36,7 @@ public class CompetenceWS {
 	@Produces(MediaType.APPLICATION_JSON)
 	public Competence findById(@PathParam("id") long id) throws Exception {
 		EntityManager em = StartupListener.emf.createEntityManager();
-		return GenericDao.findById(Competence.class, id, em, true);
+		return GenericDao.findById(Competence.class, id, em, false);
 	}
 
 	@POST

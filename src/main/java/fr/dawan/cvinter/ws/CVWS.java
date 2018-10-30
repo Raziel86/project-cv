@@ -26,7 +26,7 @@ public class CVWS {
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<CV> findAll() throws Exception {
 		EntityManager em = StartupListener.emf.createEntityManager();
-		return CVDao.findAll(em, true);
+		return CVDao.findAll(em, false);
 	}
 
 	@GET
@@ -34,7 +34,7 @@ public class CVWS {
 	@Produces(MediaType.APPLICATION_JSON)
 	public CV findById(@PathParam("id") long id) throws Exception {
 		EntityManager em = StartupListener.emf.createEntityManager();
-		return GenericDao.findById(CV.class, id, em, true);
+		return GenericDao.findById(CV.class, id, em, false);
 	}
 
 	@POST

@@ -27,7 +27,7 @@ public class ExperiencesProWS {
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<ExperiencesPro> findAll() throws Exception {
 		EntityManager em = StartupListener.emf.createEntityManager();
-		return ExperiencesProDao.findAll( em, true);
+		return GenericDao.findAll(ExperiencesPro.class, em, true);
 	}
 
 	@GET
