@@ -79,8 +79,8 @@
 			<version>2.8.7</version>
 		</dependency>
 
-	<!-- JPA 2.1 -->
-	<dependency>
+		<!-- JPA 2.1 -->
+		<dependency>
 			<groupId>org.hibernate.javax.persistence</groupId>
 			<artifactId>hibernate-jpa-2.1-api</artifactId>
 			<version>1.0.2.Final</version>
@@ -162,24 +162,16 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.42</version>
 		</dependency>
-
-
-
-
-<dependency>
-                <groupId>com.sun.mail</groupId>
-                <artifactId>javax.mail</artifactId>
-                <version>1.6.2</version>
-            </dependency>
-            
-            <dependency>
-  <groupId>commons-email</groupId>
-  <artifactId>commons-email</artifactId>
-  <version>20030310.165926</version>
-</dependency>
-
-
-
+		<dependency>
+            <groupId>com.sun.mail</groupId>
+            <artifactId>javax.mail</artifactId>
+            <version>1.6.2</version>
+        </dependency>    
+        <dependency>
+			<groupId>commons-email</groupId>
+			<artifactId>commons-email</artifactId>
+			<version>20030310.165926</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<finalName>CVinter</finalName>
