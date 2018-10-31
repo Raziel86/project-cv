@@ -18,7 +18,6 @@ import fr.dawan.cvinter.beans.CentresInterets;
 import fr.dawan.cvinter.beans.Competence;
 import fr.dawan.cvinter.beans.ExperiencesPro;
 import fr.dawan.cvinter.beans.Formation;
-import fr.dawan.cvinter.beans.Login;
 import fr.dawan.cvinter.beans.User;
 import fr.dawan.cvinter.dao.GenericDao;
 
@@ -56,7 +55,7 @@ public class TestDataController extends HttpServlet {
 
 		CV cv1 = new CV();
 		cv1.setUser(GenericDao.findById(User.class, 1, em, false));
-
+		
 		cv1.setName("test1");
 
 		Formation f1 = new Formation("Java Jee", new Date(), new Date(), "Lille", "blablabla");
@@ -105,11 +104,37 @@ public class TestDataController extends HttpServlet {
 
 		CVTemplate templ2 = new CVTemplate();
 		templ2.setName("template test 2");
-		cv1.setTemplate(templ2);
+		cv2.setTemplate(templ2);
+		
+		CV cv3 = new CV();
+		cv3.setUser(GenericDao.findById(User.class, 2, em, false));
+		cv3.setName("test3");
+
+		Formation f3 = new Formation("WebMaster", new Date(), new Date(), "Paris", "obey your master !");
+		cv3.getFormations().add(f3);
+
+		ExperiencesPro exp3 = new ExperiencesPro("vendeur", "orange", new Date(), new Date(), "remboursez moi !");
+		cv3.getExperiences().add(exp3);
+
+		List<String> tags3 = new ArrayList<>();
+		tags3.add("SAV");
+		tags3.add("suivi client");
+		tags3.add("prospection");
+		
+		Competence comp3 = new Competence("vente", tags3);
+		cv3.getCompetences().add(comp3);
+
+		CentresInterets ci3 = new CentresInterets("lecture");
+		cv3.getHobbies().add(ci3);
+
+		CVTemplate templ3 = new CVTemplate();
+		templ2.setName("template test 3");
+		cv3.setTemplate(templ3);
 
 		GenericDao.save(cv1, em, false);
 		GenericDao.save(cv2, em, false);
-
+		GenericDao.save(cv3, em, false);
+		
 		response.getWriter().append("insertions effectuées");
 	}
 

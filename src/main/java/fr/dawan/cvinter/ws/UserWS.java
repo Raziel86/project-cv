@@ -23,13 +23,24 @@ import fr.dawan.cvinter.dao.UtilisateurDao;
 
 @Path("/users") // localhost:8080/cvinter/api/users
 public class UserWS {
-	
+
+	@GET
+	@Path("/{id}/cv/{cvId}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public CV findCVIdByUserId(@PathParam("id") long id, @PathParam("cvId") long cvId) throws Exception {
+		// TODO vérifier que l'utilisiteur connecté correspond au paramètre.
+		System.out.println("lancement requête CVById " + cvId);
+		EntityManager em = StartupListener.emf.createEntityManager();
+		return CVDao.findCVIdByUserId(id, cvId, em, false);
+	}
+
 	@GET
 	@Path("/{id}/cv")
 	@Produces(MediaType.APPLICATION_JSON)
-	public List<CV> findCVByUserId(@PathParam("id") long id) throws Exception{
+	public List<CV> findCVByUserId(@PathParam("id") long id) throws Exception {
+		System.out.println("lancement requête CVByUser " + id);
 		EntityManager em = StartupListener.emf.createEntityManager();
-		return CVDao.findCVByUserId(id, em, true);
+		return CVDao.findCVByUserId(id, em, false);
 	}
 
 	@GET

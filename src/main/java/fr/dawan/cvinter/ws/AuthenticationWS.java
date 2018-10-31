@@ -2,6 +2,7 @@ package fr.dawan.cvinter.ws;
 
 import javax.persistence.EntityManager;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -21,11 +22,13 @@ public class AuthenticationWS {
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response login(Login login) throws Exception {
-		System.out.println("User : " + login.getEmail() + " - " + login.getPassword());
+	public Response login(@FormParam("email") String email, @FormParam("password") String password) throws Exception {
+//		System.out.println("User : " + login.getEmail() + " - " + login.getPassword());
+
+		System.out.println("User : " + email + " - " + password);
 		EntityManager em = StartupListener.emf.createEntityManager();
 		
-		User u = AuthenticationDao.findUser(login, em, true);
+		User u = AuthenticationDao.findUser(new Login(email, password), em, false);
 		System.out.println(u);
 		if(u!=null && u.getId() > 0 ) {
 			
@@ -39,15 +42,15 @@ public class AuthenticationWS {
 	
 
 	
-	@POST
-	@Path("/test3")
-	@Produces(MediaType.APPLICATION_JSON)
-	public Response test2() throws Exception {
-		EntityManager em = StartupListener.emf.createEntityManager();
-		
-		
-		return Response.status(200).entity("{\"msg\":\"Helloooooo\"}").build();
-	}
+//	@POST
+//	@Path("/test3")
+//	@Produces(MediaType.APPLICATION_JSON)
+//	public Response test2() throws Exception {
+//		EntityManager em = StartupListener.emf.createEntityManager();
+//		
+//		
+//		return Response.status(200).entity("{\"msg\":\"Helloooooo\"}").build();
+//	}
 	
 //	@POST
 //	@Consumes(MediaType.APPLICATION_JSON)
