@@ -20,7 +20,7 @@ import fr.dawan.cvinter.dao.CVDao;
 import fr.dawan.cvinter.dao.FormationDao;
 import fr.dawan.cvinter.dao.GenericDao;
 
-@Path("/formation")
+@Path("/formations")
 public class FormationWS {
 
 	
